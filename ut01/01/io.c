@@ -12,7 +12,7 @@ int main(void){
 
     resultado = num1+num2;
 
-    printf("El resultado es: %d/n", resultado);
+    printf("El resultado es: %d\n", resultado);
 
     return 0;
 }
