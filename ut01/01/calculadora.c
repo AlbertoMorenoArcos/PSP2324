@@ -1,41 +1,45 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
 int main(int argc, char *argv[])
 {
 
-    // tolower(argv[0]);
-    printf("hola");
-    if (argc > 1)
+     float n1 = atof(argv[2]);
+     float n2 = atof(argv[3]);
+     
+    
+    if (argc >= 4)
     {
-        if (*argv[0] == "suma")
+   
+        if (strcmp(argv[1], "suma") == 0)
         {
-            int suma = *argv[1] + *argv[2];
-            printf("Has elegido sumar %d + %d\n", argv[1], argv[2]);
-            printf("El resultado es: %d", suma);
+            float suma = n1 + n2;
+            printf("Has elegido sumar %.2f + %.2f\n", n1, n2);
+            printf("El resultado es: %.2f\n", suma);
         }
-        else if (argv[0] == "resta")
+        else if (strcmp(argv[1], "resta") == 0)
         {
-            int resta = argv[1] - argv[2];
-            printf("Has elegido restar %d - %d\n", argv[1], argv[2]);
-            printf("El resultado es: %d", resta);
+            float resta = n1 - n2;
+            printf("Has elegido restar %.2f - %.2f\n", n1, n2);
+            printf("El resultado es: %.2f\n", resta);
         }
-        else if (argv[0] == "multiplicacion")
+        else if (strcmp(argv[1], "multiplicacion") == 0)
         {
-            int multiplicacion = argv[1] * argv[2];
-            printf("Has elegido multiplicar %d * %d\n", argv[1], argv[2]);
-            printf("El resultado es: %d", multiplicacion);
+            float multiplicacion = n1 * n2;
+            printf("Has elegido multiplicar %.2f * %.2f\n", n1, n2);
+            printf("El resultado es: %.2f\n", multiplicacion);
         }
-        else if (argv[0] == "division")
+        else if (strcmp(argv[1], "division") == 0)
         {
-            if (argv[1] == 0 || argv[2] == 0)
+            if (n1 == 0 || n2 == 0)
             {
-                printf("Uno de los dos valores es 0 y no se puede realizar la division.");
+                printf("Uno de los dos valores es 0 y no se puede realizar la division.\n");
             }
             else
             {
-                float division = argv[1] / argv[2];
-                printf("Has elegido dividir %d / %d\n", argv[1], argv[2]);
-                printf("El resultado es: %2.f", division);
+                float division = n1 / n2;
+                printf("Has elegido dividir %.2f / %.2f\n", n1, n2);
+                printf("El resultado es: %.2f\n", division);
             }
         }
     }
