@@ -31,7 +31,7 @@ int main(int arc, char *argv[]) {
 
     generateMD5(string, result);
 
-    printf("MD5(\"%s\") = %s", string, result);
+    printf("MD5(%s) = %s", string, result);
    
     printf("\n");
 

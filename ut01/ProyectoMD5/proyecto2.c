@@ -6,17 +6,14 @@
 #define MD5_LEN 16
 // Hashes proporcionados
 char *hashes[] = {
-    "582fc884d6299814fbd4f12c1f9ae70f",
-    "74437fabd7c8e8fd178ae89acbe446f2",
-    "28ea19352381b8659df830dd6d5c90a3",
-    "90f077d7759d0d4d21e6867727d4b2bd",
-};
+    "f4a1c8901a3d406f17af67144a3ec71a",
+    "d66e29062829e8ae0313adc5a673f863"};
 
 // Caracteres ascii minúsculas
-char charset[] = "abcdefghijklmnopqrstuvwxyz";
+char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 // Longitud de la contraseña original
-int password_length = 4;
+int password_length = 5;
 
 void generateMD5(const char *string, unsigned char *str_result)
 {
@@ -41,12 +38,13 @@ void generateMD5(const char *string, unsigned char *str_result)
 
 void brute_force()
 {
-    char candidate[5];
+    char candidate[6];
     char hash[MD5_LEN];
     clock_t start, end;
     double cpu_time_used;
 
     start = clock();
+    
     for (int c1 = 0; c1 < strlen(charset); c1++)
     {
         candidate[0] = charset[c1];
@@ -59,14 +57,18 @@ void brute_force()
                 for (int c4 = 0; c4 < strlen(charset); c4++)
                 {
                     candidate[3] = charset[c4];
-                    candidate[4] = '\0';
-                    generateMD5(candidate, hash);
-
-                    for (int i = 0; i < sizeof(hashes) / sizeof(hashes[0]); i++)
+                    
+                    for (int c5 = 0; c5 < strlen(charset); c5++)
                     {
-                        if (strcmp(hashes[i], hash) == 0)
+                        candidate[4] = charset[c5];
+                        candidate[5] = '\0';
+                        generateMD5(candidate, hash);
+                        for (int i = 0; i < sizeof(hashes) / sizeof(hashes[0]); i++)
                         {
-                            printf("Contraseña encontrada: %s (Hash: %s)\n", candidate, hashes[i]);
+                            if (strcmp(hashes[i], hash) == 0)
+                            {
+                                printf("Contraseña encontrada: %s (Hash: %s)\n", candidate, hashes[i]);
+                            }
                         }
                     }
                 }
@@ -74,17 +76,17 @@ void brute_force()
         }
     }
 
-    end = clock(); // Guardamos el tiempo de finalización
+        end = clock(); // Guardamos el tiempo de finalización
 
-    // Calculamos el tiempo de ejecución en segundos
-    // Tomamos la diferencia entre el tiempo de finalización y el tiempo de inicio
-    // Luego dividimos por CLOCKS_PER_SEC para obtener el tiempo en segundos
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Tiempo de ejecución: %f segundos\n", cpu_time_used);
-}
+        // Calculamos el tiempo de ejecución en segundos
+        // Tomamos la diferencia entre el tiempo de finalización y el tiempo de inicio
+        // Luego dividimos por CLOCKS_PER_SEC para obtener el tiempo en segundos
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        printf("Tiempo de ejecución: %f segundos\n", cpu_time_used);
+    }
 
-int main()
-{
-    brute_force();
-    return 0;
-}
+    int main()
+    {
+        brute_force();
+        return 0;
+    }
