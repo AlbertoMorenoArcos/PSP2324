@@ -33,7 +33,7 @@ int main()
         "90f077d7759d0d4d21e6867727d4b2bd",
     };
     char letras[] = "abcdefghijklmnopqrstuvwxyz";
-    char cadena[6];
+    char cadena[5];
     char hash[EVP_MAX_MD_SIZE];
 
     for (int c1 = 0; c1 < strlen(letras); c1++)
@@ -48,14 +48,19 @@ int main()
                 for (int c4 = 0; c4 < strlen(letras); c4++)
                 {
                     cadena[3] = letras[c4];
-                    for (int c5 = 0; c5 < strlen(letras); c5++)
+                    cadena[4] = '\0';                    
+                    generateMD5(cadena, hash);                   
+                   for (int i = 0; i<4; i++)
                     {
-                        cadena[4] = letras[c5];
-                        cadena[5] = '\0';
-                        printf("%s\n", cadena);
+                        if (strcmp(hash, hashes[i]) == 0)
+                        {
+                            printf("%s\n", cadena);
+                        }
                     }
+                    
                 }
             }
         }
     }
+    return 0;
 }
