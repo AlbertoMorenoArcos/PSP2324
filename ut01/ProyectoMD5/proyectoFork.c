@@ -32,10 +32,16 @@ int main()
         "28ea19352381b8659df830dd6d5c90a3",
         "90f077d7759d0d4d21e6867727d4b2bd",
     };
-    char letras[] = "abcdefghijklmnopqrstuvwxyz";
+    char letras[] = "abcdefghijklmn";
+    char letras2[] = "opqrstuvwxyz";
     char cadena[5];
     char hash[EVP_MAX_MD_SIZE];
+    pid_t id_hijo;
 
+
+    if(id_hijo != 0){
+
+    }
     for (int c1 = 0; c1 < strlen(letras); c1++)
     {
         cadena[0] = letras[c1];
