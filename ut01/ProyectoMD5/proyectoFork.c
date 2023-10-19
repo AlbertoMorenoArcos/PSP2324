@@ -32,41 +32,65 @@ int main()
         "28ea19352381b8659df830dd6d5c90a3",
         "90f077d7759d0d4d21e6867727d4b2bd",
     };
-    char letras[] = "abcdefghijklmn";
-    char letras2[] = "opqrstuvwxyz";
+    char letras[] = "abcdefghijklmnopqrstuvwxyz";
     char cadena[5];
     char hash[EVP_MAX_MD_SIZE];
     pid_t id_hijo;
 
-
-    if(id_hijo != 0){
-
-    }
-    for (int c1 = 0; c1 < strlen(letras); c1++)
+    if (id_hijo != 0)
     {
-        cadena[0] = letras[c1];
-        for (int c2 = 0; c2 < strlen(letras); c2++)
+        for (int c1 = 0; c1 < letras[13]; c1++)
         {
-            cadena[1] = letras[c2];
-            for (int c3 = 0; c3 < strlen(letras); c3++)
+            cadena[0] = letras[c1];
+            for (int c2 = 0; c2 < strlen(letras); c2++)
             {
-                cadena[2] = letras[c3];
-                for (int c4 = 0; c4 < strlen(letras); c4++)
+                cadena[1] = letras[c2];
+                for (int c3 = 0; c3 < strlen(letras); c3++)
                 {
-                    cadena[3] = letras[c4];
-                    cadena[4] = '\0';                    
-                    generateMD5(cadena, hash);                   
-                   for (int i = 0; i<4; i++)
+                    cadena[2] = letras[c3];
+                    for (int c4 = 0; c4 < strlen(letras); c4++)
                     {
-                        if (strcmp(hash, hashes[i]) == 0)
+                        cadena[3] = letras[c4];
+                        cadena[4] = '\0';
+                        generateMD5(cadena, hash);
+                        for (int i = 0; i < 4; i++)
                         {
-                            printf("%s\n", cadena);
+                            if (strcmp(hash, hashes[i]) == 0)
+                            {
+                                printf("%s\n", cadena);
+                            }
                         }
                     }
-                    
+                }
+            }
+        }
+    }else{
+        for (int c1 = 12; c1 < strlen(letras); c1++)
+        {
+            cadena[0] = letras[c1];
+            for (int c2 = 0; c2 < strlen(letras); c2++)
+            {
+                cadena[1] = letras[c2];
+                for (int c3 = 0; c3 < strlen(letras); c3++)
+                {
+                    cadena[2] = letras[c3];
+                    for (int c4 = 0; c4 < strlen(letras); c4++)
+                    {
+                        cadena[3] = letras[c4];
+                        cadena[4] = '\0';
+                        generateMD5(cadena, hash);
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (strcmp(hash, hashes[i]) == 0)
+                            {
+                                printf("%s\n", cadena);
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
     return 0;
 }
