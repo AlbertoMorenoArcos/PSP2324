@@ -27,13 +27,11 @@ void generateMD5(const char *string, unsigned char *str_result)
 int main()
 {
     char *hashes[] = {
-        "582fc884d6299814fbd4f12c1f9ae70f",
-        "74437fabd7c8e8fd178ae89acbe446f2",
-        "28ea19352381b8659df830dd6d5c90a3",
-        "90f077d7759d0d4d21e6867727d4b2bd",
+    "f4a1c8901a3d406f17af67144a3ec71a",
+    "d66e29062829e8ae0313adc5a673f863"
     };
-    char letras[] = "abcdefghijklmnopqrstuvwxyz";
-    char cadena[5];
+    char letras[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char cadena[6];
     char hash[EVP_MAX_MD_SIZE];
     pid_t id_hijo;
     clock_t start, end;
@@ -54,13 +52,17 @@ int main()
                     for (int c4 = 0; c4 < strlen(letras); c4++)
                     {
                         cadena[3] = letras[c4];
-                        cadena[4] = '\0';
-                        generateMD5(cadena, hash);
-                        for (int i = 0; i < 4; i++)
+                        for(int c5 = 0;c5< strlen(letras); c5++)
                         {
-                            if (strcmp(hash, hashes[i]) == 0)
+                            cadena[4] = letras[c5];
+                            cadena[5] = '\0';
+                            generateMD5(cadena, hash);
+                            for (int i = 0; i < 2; i++)
                             {
-                                printf("%s\n", cadena);
+                                if (strcmp(hash, hashes[i]) == 0)
+                                {
+                                    printf("%s\n", cadena);
+                                }
                             }
                         }
                     }
@@ -70,7 +72,7 @@ int main()
     }
     else
     {
-        for (int c1 = 12; c1 < strlen(letras); c1++)
+        for (int c1 = 25; c1 < strlen(letras); c1++)
         {
             cadena[0] = letras[c1];
             for (int c2 = 0; c2 < strlen(letras); c2++)
@@ -82,13 +84,17 @@ int main()
                     for (int c4 = 0; c4 < strlen(letras); c4++)
                     {
                         cadena[3] = letras[c4];
-                        cadena[4] = '\0';
-                        generateMD5(cadena, hash);
-                        for (int i = 0; i < 4; i++)
+                        for(int c5 = 0;c5< strlen(letras); c5++)
                         {
-                            if (strcmp(hash, hashes[i]) == 0)
+                            cadena[4] = letras[c5];
+                            cadena[5] = '\0';
+                            generateMD5(cadena, hash);
+                            for (int i = 0; i < 2; i++)
                             {
-                                printf("%s\n", cadena);
+                                if (strcmp(hash, hashes[i]) == 0)
+                                {
+                                    printf("%s\n", cadena);
+                                }
                             }
                         }
                     }
