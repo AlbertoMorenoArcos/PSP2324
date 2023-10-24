@@ -9,6 +9,8 @@
 
 int main()
 {
+    //Hay que utilizar una semilla para generar numeros aleatorios cada vez que se ejecuta el programa, esta utiliza la hora actual
+    srand(time(NULL)); 
     int pipe1[2];
     int pipe2[2];
     pid_t child1, child2;

@@ -83,7 +83,9 @@ int main()
         exit(EXIT_SUCCESS);
     }
     else
-    {                          // Código del proceso padre
+    {           
+        srand(time(NULL));               
+        // Código del proceso padre
         int n1; // Este es el número que el padre enviará al hijo
         int n2;
         int n3;
