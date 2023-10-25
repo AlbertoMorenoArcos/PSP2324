@@ -55,15 +55,3 @@ int main()
     }
     return 0;
 }
-/*FILE *archivo = fopen("datos.txt", "w");
-
-        // Comprobar si se pudo abrir el archivo
-        if (archivo == NULL)
-        {
-            perror("No se pudo abrir el archivo");
-            return 1;
-        }
-        fprintf(archivo, "%d", i);
-
-        // Cerrar el archivo
-        fclose(archivo);*/
