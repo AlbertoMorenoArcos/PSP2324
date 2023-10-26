@@ -29,7 +29,9 @@ int main()
             char cadena[nProcesos];
             for (int i = 0; i <= strlen(letras); i++)
             {
-                FILE *archivo = fopen("datos.txt", "w");
+                char filename[15];
+                sprintf(filename, "datos%d.txt", i);
+                FILE *archivo = fopen(filename, "w");
                 cadena[0] = letras[i];
                 cadena[1] = '\0';
                 fprintf(archivo, "%s", cadena);
