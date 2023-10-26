@@ -1,4 +1,4 @@
-/*Crea un programa que reciba un número n por parámetro. 
+/*Crea un programa que reciba un número n por parámetro.
 El programa creará n hijos y les enviará una señal a cada uno de ellos para matarlos.*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,33 +7,19 @@ El programa creará n hijos y les enviará una señal a cada uno de ellos para m
 #include <string.h>
 #include <signal.h>
 
-
-void sigint_handler(int signo) {
+void sigusr1_handler(int signo)
+{
     pid_t pid_hijo = getpid();
-    // Aquí puedes realizar acciones adicionales antes de salir si lo deseas
-    //exit(0);
-        // El nombre del programa a ejecutar
-    char *program = "kill";
-
-    // Argumentos para el programa: el nombre del programa, "-l", "-a" y NULL al final
-    char *arguments[] = {"kill","-9", pid_hijo};
-    // Llamar a execvp para ejecutar el comando ls con argumentos
-    execvp(program, arguments);
-
-    // Si execvp falla, imprimirá un error
-    perror("execvp");
-    return 1;
-
+    printf("Voy a morir. Soy el proceso: %d\n", pid_hijo);
 }
 int main()
 {
     int nProcesos;
-
-
+    pid_t pid_hijo;
     printf("Ingrese el numero de procesos: ");
     scanf("%d", &nProcesos);
 
-    for (int i = 1; i <= nProcesos; i++)
+    for (int i = 0; i < nProcesos; i++)
     {
         pid_t hijo;
         hijo = fork();
@@ -44,15 +30,21 @@ int main()
         }
         else if (hijo == 0)
         {
-            signal(SIGUSR1, sigint_handler);
+            pid_hijo = getpid();
+            signal(SIGUSR1, sigusr1_handler);
         }
         else
         {
-            waitpid(hijo);
+            while (1)
+            {
+                sleep(1);
+            }
         }
     }
-    while (1) {
-        sleep(1);
+    for (int i = 0; i < nProcesos; i++)
+    {
+        kill(pid_hijo, SIGUSR1);
     }
+
     return 0;
 }
