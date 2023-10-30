@@ -4,7 +4,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Fecha {
+public class Pruebas {
     public static void main(String[] args) {
         String direc = "/home/alberto";
         String home = direc.replaceFirst("\\/", "");
