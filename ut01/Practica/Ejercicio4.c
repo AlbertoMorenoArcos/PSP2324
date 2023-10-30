@@ -9,8 +9,9 @@ El programa creará n hijos y les enviará una señal a cada uno de ellos para m
 
 void sigusr1_handler(int signo)
 {
-    pid_t pid_hijo = getpid();
-    printf("Voy a morir. Soy el proceso: %d\n", pid_hijo);
+    pid_t pid_hijo_s = getpid();
+    printf("Voy a morir. Soy el proceso: %d\n", pid_hijo_s);
+    exit(0);
 }
 int main()
 {
@@ -31,20 +32,22 @@ int main()
         else if (hijo == 0)
         {
             pid_hijo = getpid();
+            printf("PID HIJO: %d", pid_hijo);
             signal(SIGUSR1, sigusr1_handler);
         }
         else
         {
+
             while (1)
             {
+
                 sleep(1);
             }
         }
     }
-    for (int i = 0; i < nProcesos; i++)
-    {
-        kill(pid_hijo, SIGUSR1);
-    }
-
+            /*for (int i = 0; i < nProcesos; i++)
+            {
+                kill(pid_hijo, SIGUSR1);
+            }*/
     return 0;
 }
