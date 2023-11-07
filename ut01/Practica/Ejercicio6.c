@@ -1,5 +1,5 @@
-/*Crea un programa que reciba un número n por parámetro.
-El programa creará n hijos y les enviará una señal a cada uno de ellos para matarlos.*/
+/*Crea un programa que cree un hijo y le mande a través de un pipe un carácter y dos números. El carácter representa una operación matemática: suma o resta. 
+El proceso hijo devolverá en su estado el resultado de la operación.*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

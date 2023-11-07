@@ -1,3 +1,6 @@
+/*Crea un proceso que cree un proceso hijo, el envíe 3 números enteros aleatorios a través de un pipe. 
+El proceso hijo los ordenará y los escribirá en el fichero salida.txt.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
