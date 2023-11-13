@@ -11,7 +11,7 @@ public class Principal {
 
         Corredor[] Arraycorredores = new Corredor[Corredores];
         for (int i = 0; i < Arraycorredores.length; i++) {
-            Arraycorredores[i] = new Corredor(TOTAL_CARRERA, START_DORSAL + 1);
+            Arraycorredores[i] = new Corredor(TOTAL_CARRERA, START_DORSAL + i);
         }
 
         Thread[] Arraythreads = new Thread[Hilos];

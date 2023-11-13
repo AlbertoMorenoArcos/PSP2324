@@ -6,7 +6,6 @@ public class Corredor  implements Runnable{
     int kmRecorrido;
     int kmTotales;
     int dorsal;
-    public Object run;
     public Corredor(int kmTotales, int dorsal){
         this.kmTotales = kmTotales;
         this.dorsal= dorsal;
