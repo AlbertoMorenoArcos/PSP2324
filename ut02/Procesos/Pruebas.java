@@ -1,4 +1,4 @@
-package ut01.Java;
+package ut02.Procesos;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,14 +7,13 @@ import java.time.ZonedDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-public class CompresorFOR {
+public class Pruebas {
     public static void main(String[] args) throws IOException {
         String fecha = ZonedDateTime.now(ZoneId.of("Europe/Madrid"))
                 .format(DateTimeFormatter.ofPattern("MM.dd.yyy"))
                 .replaceAll("\\.", "_");
 
-        for (int i = 0; i<args.length;i++) {
-            String arg = args[i];
+        for (String arg : args) {
             String ruta = arg.replaceFirst("\\/", "").replaceAll("\\/", "_");
             String n_archivo = ruta + "_" + fecha + ".tar.gz";
 
