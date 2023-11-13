@@ -7,7 +7,10 @@ A cada thread le dará un nombre (Método setName) y escribirá la tabla de un n
 NOTA: La salida estará desordenada.
 
 Ejecuta el comando en la terminal, y vuelca su salida a un fichero. 
-Utiliza las redirecciones de linux y el comando sort para verificar que has escrito todas las tablas. */
+Utiliza las redirecciones de linux y el comando sort para verificar que has escrito todas las tablas. 
+alberto@alberto-VirtualBox:~/PSP2324/ut02/Threads$ java Ejercicio2.Ejercicio2 3 > salida.txt
+alberto@alberto-VirtualBox:~/PSP2324/ut02/Threads$ sort salida.txt
+*/
 
 package Ejercicio2;
 
