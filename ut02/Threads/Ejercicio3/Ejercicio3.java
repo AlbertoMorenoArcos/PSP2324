@@ -16,7 +16,7 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         animales perro = new animales("perro", "ladraba", 8);
-        animales gato = new animales("gato", "maullaba", 2);
+        animales gato = new animales("gato", "maullaba", 4);
         animales raton = new animales("raton", "mordisqueaba", 5);
         
         Thread threadPerro = new Thread(perro);
@@ -75,7 +75,7 @@ class animales extends Thread {
     public boolean esPrimo (int numero) {
         for (int i = 2; i <= Math.sqrt(numero); i++) {
             if (numero % i == 0) {
-                return false; // Si es divisible por algún número en este rango, no es primo
+                return false; 
             }
         }
     
