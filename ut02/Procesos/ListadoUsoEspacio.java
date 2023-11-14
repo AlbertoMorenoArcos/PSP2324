@@ -8,7 +8,6 @@ public class ListadoUsoEspacio {
     public static void main(String[] args) throws IOException {
 
         if (args.length == 0) {
-            System.out.println("Uso: java ListadoUsoEspacio <directorio1> <directorio2> ...");
             System.exit(1);
         }
 
@@ -32,3 +31,9 @@ public class ListadoUsoEspacio {
         }
     }
 }
+
+/*
+Para mostrar la salida ordenada en un fichero
+alberto@alberto-VirtualBox:~/PSP2324$ java ut02.Procesos.ListadoUsoEspacio /home/alberto /home > salida.txt
+alberto@alberto-VirtualBox:~/PSP2324$ sort salida.txt
+ */
