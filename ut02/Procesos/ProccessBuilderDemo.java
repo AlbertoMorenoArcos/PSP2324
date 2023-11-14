@@ -3,7 +3,7 @@ package ut02.Procesos;
 import java.io.*;
 
 class ProccessBuilderDemo {
-    public static void main(String[] arg) throws IOException
+    public static void main(String[] args) throws IOException
     {
         // creating list of commands
        /*  List<String> commands = new ArrayList<String>();
