@@ -36,4 +36,4 @@ public class ListadoUsoEspacio {
 Para mostrar la salida ordenada en un fichero
 alberto@alberto-VirtualBox:~/PSP2324$ java ut02.Procesos.ListadoUsoEspacio /home/alberto /home > salida.txt
 alberto@alberto-VirtualBox:~/PSP2324$ sort salida.txt
- */
+ */ 
