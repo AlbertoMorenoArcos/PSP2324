@@ -42,12 +42,10 @@ int realizarTrabajoDeHijo(int soy_hijo, int n_procesos, int nIntroducido)
         {
             if (esPrimo(i))
             {
-                // dup2(filePrimos, STDOUT_FILENO);
                 printf("El numero %d es primo\n", i);
             }
             else
             {
-                // dup2(fileNoPrimos, STDOUT_FILENO);
                 printf("El numero %d no es primo\n", i);
             }
         }

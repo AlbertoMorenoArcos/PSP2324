@@ -10,7 +10,7 @@ public class Ejercicio3 {
     public static void main(String[] args) throws IOException {
 
         int nProcesos = Integer.parseInt(args[0]);
-        for (int i = 0; i < nProcesos; i++) {
+        for (int i = 1; i <= nProcesos; i++) {
             String n_archivo = "datos" + i + ".txt";
             String[] commands = {
                     "echo",
@@ -23,9 +23,13 @@ public class Ejercicio3 {
             Process process = pb.start();
             try (BufferedWriter escritor = new BufferedWriter(new FileWriter(n_archivo))) {
                 // Escribir el abecedario en el archivo
+
                 for (char letra = 'a'; letra <= 'z'; letra++) {
-                    escritor.write(letra);
+                    for (int j = 0; j < i; j++) {
+                        escritor.write(letra);
+                    }
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
