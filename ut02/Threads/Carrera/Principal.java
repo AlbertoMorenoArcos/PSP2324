@@ -8,10 +8,10 @@ public class Principal {
     private static final int START_DORSAL = 1;
 
     public static void main(String[] args) {
-
+        Object salida = new Object();
         Corredor[] Arraycorredores = new Corredor[Corredores];
         for (int i = 0; i < Arraycorredores.length; i++) {
-            Arraycorredores[i] = new Corredor(TOTAL_CARRERA, START_DORSAL + i);
+            Arraycorredores[i] = new Corredor(TOTAL_CARRERA, START_DORSAL + i, salida);
         }
 
         Thread[] Arraythreads = new Thread[Hilos];
@@ -23,12 +23,17 @@ public class Principal {
         for (int i = 0; i < Arraythreads.length; i++) {
             Arraythreads[i].start();
         }
+        synchronized (salida) {
+            try {
+                salida.notifyAll();
+            } catch (Exception e) {
+                System.out.println("Error en la sincronizacion");
+            }
+        }
         for (int i = 0; i < Arraythreads.length; i++) {
             try {
-
                 Arraythreads[i].join();
             } catch (InterruptedException e) {
-
                 e.printStackTrace();
             }
         }

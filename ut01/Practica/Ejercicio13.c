@@ -25,8 +25,8 @@ int esPrimo(int numero)
     return 1; // El número es primo
 }
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
-        fprintf(stderr, "Uso: %s <num1> <num2>\n", argv[0]);
+    if (argc < 3) {
+        fprintf(stderr, "ERROR. Introduce: %s num1 num2\n", argv[0]);
         return 1;
     }
 
