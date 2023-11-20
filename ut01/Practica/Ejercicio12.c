@@ -24,18 +24,6 @@ int esPrimo(int numero)
 }
 int realizarTrabajoDeHijo(int soy_hijo, int n_procesos, int nIntroducido)
 {
-    /*int filePrimos = open("primos.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    if (filePrimos < 0)
-    {
-        perror("open");
-        return 1;
-    }
-    int fileNoPrimos = open("noprimos.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    if (fileNoPrimos < 0)
-    {
-        perror("open");
-        return 1;
-    }*/
     for (int i = 1; i <= nIntroducido; i++)
     {
         if (i % n_procesos == soy_hijo)

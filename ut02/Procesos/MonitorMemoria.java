@@ -15,8 +15,10 @@ public class MonitorMemoria {
                 Process process = processBuilder.start();
                 Thread.sleep(5000);
                 // Lee la salida del proceso
-                try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
-                    reader.lines().forEach(System.out::println);
+                BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                String s = null;
+                while ((s = stdInput.readLine()) != null) {
+                    System.out.println(s);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

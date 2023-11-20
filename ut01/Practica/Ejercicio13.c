@@ -7,30 +7,64 @@ y el proceso padre al recoger el estado del hijo cuenta si era primo o no, el pa
 #include <fcntl.h>
 #include <string.h>
 #include <signal.h>
-int main(int argc, char *argv[])
+#define ES_PRIMO 0
+#define NO_ES_PRIMO 1
+int esPrimo(int numero)
 {
-    int num1 = atol(argv[2]);
-    int num2 = atol(argv[3]);
-    int nProcesos = 2;
-    for (int i = 0; i < nProcesos; i++)
+    if (numero <= 1)
     {
-        pid_t hijo = fork();
-
-        if (hijo < 0)
+        return 0; // Los números menores o iguales a 1 no son primos
+    }
+    for (int i = 2; i * i <= numero; i++)
+    {
+        if (numero % i == 0)
         {
-            perror("Error al crear el primer proceso hijo");
-            return 1;
-        }
-        else if (hijo == 0)
-        {
-
-            printf("PID HIJO: %d\n", hijo);
-        }
-        else
-        {
-            wait(NULL);
+            return 0; // El número no es primo
         }
     }
+    return 1; // El número es primo
+}
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        fprintf(stderr, "Uso: %s <num1> <num2>\n", argv[0]);
+        return 1;
+    }
+
+    int num1 = atoll(argv[1]);
+    int num2 = atoll(argv[2]);
+    int contadorPrimos = 0;
+    int nProcesos = 2;
+
+    for (int i = 0; i < nProcesos; i++) {
+        pid_t hijo = fork();
+
+        if (hijo < 0) {
+            perror("Error al crear el proceso hijo");
+            return 1;
+        }
+
+        if (hijo == 0) {
+            // Código del hijo
+            int num = (i == 0) ? num1 : num2; // Determina cuál número procesa cada hijo
+            if (esPrimo(num)) {
+                exit(ES_PRIMO);
+            } else {
+                exit(NO_ES_PRIMO);
+            }
+        }
+    }
+
+    for (int i = 0; i < nProcesos; i++) {
+        // Código del padre
+        int status;
+        wait(&status);
+
+        if (WIFEXITED(status) && WEXITSTATUS(status) == ES_PRIMO) {
+            contadorPrimos++;
+        }
+    }
+
+    printf("Total de números primos: %d\n", contadorPrimos);
 
     return 0;
 }
