@@ -6,6 +6,7 @@ El programa escribirá todos los números primos de la longitud n, utilizando m 
 #include <fcntl.h>
 #include <string.h>
 #include <signal.h>
+#include <math.h>
 
 int esPrimo(int numero)
 {
@@ -24,7 +25,23 @@ int esPrimo(int numero)
 }
 int realizarTrabajoDeHijo(int soy_hijo, int n_procesos, int nIntroducido)
 {
-    for (int i = 1; i <= nIntroducido; i++)
+    double rangoInicio = 1;
+    double rangoFin = 10;
+    if (nIntroducido == rangoInicio)
+    {
+        rangoInicio = nIntroducido;
+    }
+    else
+    {
+        double nPotenciaInicio = nIntroducido-1;
+        double potenciaInicio = pow(rangoInicio, nPotenciaInicio);
+        rangoInicio = potenciaInicio;
+    }
+
+    double potenciaFin = pow(rangoFin, nIntroducido);
+    rangoFin = potenciaFin - 1;
+
+    for (int i = rangoInicio; i <= rangoFin; i++)
     {
         if (i % n_procesos == soy_hijo)
         {
