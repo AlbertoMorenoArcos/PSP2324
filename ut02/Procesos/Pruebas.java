@@ -3,36 +3,54 @@ package ut02.Procesos;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.ZonedDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 public class Pruebas {
-    public static void main(String[] args) throws IOException {
-        String fecha = ZonedDateTime.now(ZoneId.of("Europe/Madrid"))
-                .format(DateTimeFormatter.ofPattern("MM.dd.yyy"))
-                .replaceAll("\\.", "_");
 
-        for (String arg : args) {
-            String ruta = arg.replaceFirst("\\/", "").replaceAll("\\/", "_");
-            String n_archivo = ruta + "_" + fecha + ".tar.gz";
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Por favor, proporcione el nombre de un usuario como parámetro.");
+            System.exit(1);
+        }
 
-            String[] commands = {
-                "tar",
-                "cvzf",
-                n_archivo,
-                arg
-            };
+        String usuario = args[0];
 
-            ProcessBuilder pb = new ProcessBuilder(commands);
-            pb.inheritIO();
+        try {
+            ejecutarComando(usuario);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void ejecutarComando(String usuario) throws IOException, InterruptedException {
+        try {
+            ProcessBuilder pb = new ProcessBuilder("ps", "aux");
             Process process = pb.start();
+            process.waitFor();
 
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String s;
-            while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            // Lee y muestra la cabecera
+            String cabecera = reader.readLine();
+            System.out.println(cabecera);
+
+            // Lee y muestra los procesos que cumplen con los criterios
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] partes = linea.split("\\s+"); // Divide la línea en partes usando espacios como separadores
+                if (partes.length >= 11) {
+                    String usuarioProceso = partes[0];
+                    String memoria = partes[3];
+
+                    // Comprueba si el usuario es el proporcionado y la memoria es mayor que 0.0
+                    if (usuarioProceso.equals(usuario) && Double.parseDouble(memoria) > 0.0) {
+                        System.out.println(linea);
+                    }
+                }
             }
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

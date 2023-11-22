@@ -30,18 +30,16 @@ public class ListadoIP {
             ProcessBuilder pb = new ProcessBuilder(commands);
                 Process process = pb.start();
                 process.waitFor();
-            BufferedReader lector = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-            String linea;
+            String s;
             System.out.println("Direcciones IP encontradas:");
 
-            while ((linea = lector.readLine()) != null) {
-                if (linea.matches(".*\\d+\\.\\d+\\.\\d+\\.\\d+.*")) {
-                    System.out.println(linea.trim());
+            while ((s = stdInput.readLine()) != null) {
+                if (s.matches(".*\\d+\\.\\d+\\.\\d+\\.\\d+.*")) {
+                    System.out.println(s.trim());
                 }
             }
-
-            lector.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
