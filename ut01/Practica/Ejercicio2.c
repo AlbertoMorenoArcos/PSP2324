@@ -15,7 +15,7 @@ int main()
     srand(time(NULL)); 
     int pipe1[2];
     int pipe2[2];
-    pid_t child1, child2;
+    pid_t hijo1, hijo2;
     int NTOTALES = 20;
     int numero;
 
@@ -32,16 +32,18 @@ int main()
     }
 
     // Crear el primer proceso hijo
-    child1 = fork();
+    hijo1 = fork();
 
-    if (child1 < 0)
+    if (hijo1 < 0)
     {
         perror("Error al crear el primer proceso hijo");
         return 1;
     }
-    else if (child1 == 0)
+    else if (hijo1 == 0)
     {
-        close(pipe1[WRITE]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
+        close(pipe1[WRITE]);
+        close(pipe2[WRITE]);
+        close(pipe2[READ]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
         int numero;
         while (read(pipe1[READ], &numero, sizeof(numero)) > 0)
         {
@@ -55,16 +57,18 @@ int main()
         // El proceso padre continúa aquí
 
         // Crear el segundo proceso hijo
-        child2 = fork();
+        hijo2 = fork();
 
-        if (child2 < 0)
+        if (hijo2 < 0)
         {
             perror("Error al crear el segundo proceso hijo");
             return 1;
         }
-        else if (child2 == 0)
+        else if (hijo2 == 0)
         {
-            close(pipe2[WRITE]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
+            close(pipe2[WRITE]);
+            close(pipe1[WRITE]);
+            close(pipe1[READ]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
             int numero;
             while (read(pipe2[READ], &numero, sizeof(numero)) > 0)
             {
@@ -96,7 +100,8 @@ int main()
             close(pipe2[WRITE]); // Cerrar el descriptor de escritura después de escribir
         }
         // Esperar a que los procesos hijos terminen
-        waitpid(child1, child2);
+        wait(NULL);
+        wait(NULL);
     }
 
     return 0;
