@@ -1,18 +1,20 @@
-/*Crea un proceso que cree dos procesos hijos, luego generará N (20) números aleatorios. Enviará los pares al primer hijo, los impares al segundo. 
+/*Crea un proceso que cree dos procesos hijos, luego generará N (20) números aleatorios. Enviará los pares al primer hijo, los impares al segundo.
 Los hijos escribirán por pantalla "Soy el hijo 1|2, he recibido ". Por cada número que mande el padre.*/
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <sys/wait.h> // Agrega esta línea para incluir la declaración de waitpid
+#include <time.h>     // Agrega esta línea para incluir la declaración de time
 
 #define READ 0
 #define WRITE 1
 
 int main()
 {
-    //Hay que utilizar una semilla para generar numeros aleatorios cada vez que se ejecuta el programa, esta utiliza la hora actual
-    srand(time(NULL)); 
+    // Hay que utilizar una semilla para generar numeros aleatorios cada vez que se ejecuta el programa, esta utiliza la hora actual
+    srand(time(NULL));
     int pipe1[2];
     int pipe2[2];
     pid_t hijo1, hijo2;
@@ -95,13 +97,13 @@ int main()
                     write(pipe2[WRITE], &numero, sizeof(numero));
                 }
             }
-            
+
             close(pipe1[WRITE]); // Cerrar el descriptor de escritura después de escribir
             close(pipe2[WRITE]); // Cerrar el descriptor de escritura después de escribir
         }
         // Esperar a que los procesos hijos terminen
-        wait(NULL);
-        wait(NULL);
+        waitpid(hijo1, NULL, 0);
+        waitpid(hijo2, NULL, 0);
     }
 
     return 0;
