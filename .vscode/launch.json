@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "Synchronized_Ejercicio4.Principal",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
             "name": "C/C++: gcc build and debug active file",
             "type": "cppdbg",
             "request": "launch",

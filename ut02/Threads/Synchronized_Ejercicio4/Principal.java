@@ -1,7 +1,7 @@
 package Synchronized_Ejercicio4;
 
 public class Principal {
-    public static final int NVECES = 100000;
+    public static final int NVECES = 1000000;
 
     public static void main(String[] args) {
 
