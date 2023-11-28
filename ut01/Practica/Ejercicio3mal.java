@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ejercicio3 {
+public class Ejercicio3mal {
     public static void main(String[] args) throws IOException {
 
         int nProcesos = Integer.parseInt(args[0]);

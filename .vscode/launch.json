@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GenerarDatos",
+            "request": "launch",
+            "mainClass": "ut01.Practica.Ejercicio3.GenerarDatos",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "Carrera",
             "request": "launch",
             "mainClass": "ut02.Threads.CarreraEjercicio4.Carrera",
