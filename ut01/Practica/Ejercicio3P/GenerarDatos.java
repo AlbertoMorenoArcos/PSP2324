@@ -31,7 +31,6 @@ public class GenerarDatos {
                 try {
                     /*Process proceso = */pb.start();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 

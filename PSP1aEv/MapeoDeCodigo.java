@@ -3,10 +3,7 @@ package PSP1aEv;
 
 import java.util.*;
 
-/**
- *
- * @author M24Y
- */
+
 public class MapeoDeCodigo {
     
     private Map<String, Integer> tablaDeCodigos;

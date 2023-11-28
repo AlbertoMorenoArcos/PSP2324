@@ -4,17 +4,11 @@
  */
 package PSP1aEv;
 import java.util.*;
-/**
- *
- * @author M24Y
- */
+
 public class Mapeo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
         Map<String, String> diccionario = new HashMap<>();
         diccionario.put("Hola", "Saludo coloquial.");
         diccionario.put("Adios", "despedida");
