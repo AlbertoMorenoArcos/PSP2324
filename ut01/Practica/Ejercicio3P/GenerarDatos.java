@@ -19,7 +19,7 @@ public class GenerarDatos {
                 // Y ejecutas java Clase N || echo > archivoNum.txt
                 String[] commands = {
                         // comando para ejecutar la clase java
-                        "java", "ut01.Practica.Ejercicio3.EscribirDatos", Integer.toString(i)// ,
+                        "java", "ut01.Practica.Ejercicio3P.EscribirDatos", Integer.toString(i)// ,
                         // redirigir el system.out.print
                         // ">",
                         // nombre del archivo donde va
@@ -29,7 +29,7 @@ public class GenerarDatos {
                 ProcessBuilder pb = new ProcessBuilder(commands);
                 pb.inheritIO();
                 try {
-                    Process proceso = pb.start();
+                    /*Process proceso = */pb.start();
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
