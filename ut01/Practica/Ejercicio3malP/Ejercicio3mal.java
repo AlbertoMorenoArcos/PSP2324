@@ -1,4 +1,4 @@
-package ut01.Practica;
+package ut01.Practica.Ejercicio3malP;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

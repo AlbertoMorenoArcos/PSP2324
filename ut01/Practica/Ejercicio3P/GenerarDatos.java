@@ -2,7 +2,7 @@
  Este número indicará el número de hijos. 
  Cada hijo generará un fichero con la posibles combinación de caracteres de esa longitud. El hijo 1 una letra, 
 el hijo 2 dos letras 'aa' a la 'zz', etc. Los nombres serán datos1.txt, datos2.txt, etc.*/
-package ut01.Practica.Ejercicio3;
+package ut01.Practica.Ejercicio3P;
 
 //import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class GenerarDatos {
                 // Y ejecutas java Clase N || echo > archivoNum.txt
                 String[] commands = {
                         // comando para ejecutar la clase java
-                        "java", "unidad01.entrenamientoC.ejercicio3.EscribirDatos", Integer.toString(i)// ,
+                        "java", "ut01.Practica.Ejercicio3.EscribirDatos", Integer.toString(i)// ,
                         // redirigir el system.out.print
                         // ">",
                         // nombre del archivo donde va

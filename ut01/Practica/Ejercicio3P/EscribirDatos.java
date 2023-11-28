@@ -1,4 +1,4 @@
-package ut01.Practica.Ejercicio3;
+package ut01.Practica.Ejercicio3P;
 
 import java.io.BufferedWriter;
 import java.io.File;

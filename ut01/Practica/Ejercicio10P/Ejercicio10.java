@@ -1,16 +1,18 @@
-/*Crea un programa Java que describa las ips que tiene en ordenador en Windows. */
-package ut01.Practica;
+/*Crea un programa Java que describa las ips que tiene en ordenador en linux */
+
+package ut01.Practica.Ejercicio10P;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ejercicio11 {
+public class Ejercicio10 {
+
     public static void main(String[] args) throws IOException {
         try {
             String[] commands = {
-                    "ipconfig",
-                    "/all"
+                    "ifconfig",
+                    "-a"
             };
             // creating the process
             ProcessBuilder pb = new ProcessBuilder(commands);
