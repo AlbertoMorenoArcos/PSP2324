@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int main() {
+int main()
+{
     // El nombre del programa a ejecutar
     char *program = "ip";
 
     // Argumentos para el programa: el nombre del programa, "-l", "-a" y NULL al final
-    char *arguments[] = {"ip","a", NULL};
+    char *arguments[] = {"ip", "-a", NULL};
 
     // Llamar a execvp para ejecutar el comando ls con argumentos
     execvp(program, arguments);
