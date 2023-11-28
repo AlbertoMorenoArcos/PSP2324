@@ -28,6 +28,7 @@ int main()
     int pipe1[2];
     int pipe2[2];
     int pipe3[2];
+    int pipe4[2];
     pid_t hijo1, hijo2;
     int NTOTALES = 20;
     int numero;
@@ -48,6 +49,11 @@ int main()
         perror("pipe");
         exit(EXIT_FAILURE);
     }
+    if (pipe(pipe4) == -1)
+    {
+        perror("pipe");
+        exit(EXIT_FAILURE);
+    }
 
     // Crear el primer proceso hijo
     hijo1 = fork();
@@ -61,8 +67,9 @@ int main()
     {
         close(pipe1[WRITE]);
         close(pipe2[WRITE]);
+        close(pipe4[WRITE]);
         close(pipe2[READ]);
-        close(pipe3[READ]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
+        close(pipe3[READ]); // El hijo no leerá del pipe, así que cerramos el descriptor de lectura
         int numero;
         int sumaHijo1;
         while (read(pipe1[READ], &numero, sizeof(numero)) > 0)
@@ -89,9 +96,10 @@ int main()
         }
         else if (hijo2 == 0)
         {
-            close(pipe2[WRITE]);
             close(pipe1[WRITE]);
-            close(pipe1[READ]); // El hijo no escribirá en el pipe, así que cerramos el descriptor de escritura
+            close(pipe2[WRITE]);
+            close(pipe3[WRITE]);
+            close(pipe1[READ]); // El hijo no leerá del pipe, así que cerramos el descriptor de lectura
             int numero;
             int sumaHijo2;
             while (read(pipe2[READ], &numero, sizeof(numero)) > 0)
@@ -99,9 +107,8 @@ int main()
                 printf("Soy el hijo 2 he recibido el numero: %d\n", numero);
                 sumaHijo2 += numero;
             }
-            sleep(1);
-            write(pipe3[WRITE], &sumaHijo2, sizeof(sumaHijo2));
-            close(pipe3[WRITE]);
+            write(pipe4[WRITE], &sumaHijo2, sizeof(sumaHijo2));
+            close(pipe4[WRITE]);
             close(pipe2[READ]); // Cerrar el descriptor de lectura después de leer
             exit(0);
         }
@@ -123,7 +130,8 @@ int main()
                     write(pipe2[WRITE], &numero, sizeof(numero));
                 }
             }
-            close(pipe3[WRITE]);
+            close(pipe3[WRITE]); // El padre no escribira en el pipe, así que cerramos el descriptor de escritura
+            close(pipe4[WRITE]); // El padre no escribira en el pipe, así que cerramos el descriptor de escritura
 
             close(pipe1[WRITE]); // Cerrar el descriptor de escritura después de escribir
             close(pipe2[WRITE]); // Cerrar el descriptor de escritura después de escribir
@@ -134,10 +142,10 @@ int main()
             int nRecibido1;
             int nRecibido2;
             read(pipe3[READ], &nRecibido1, sizeof(nRecibido1));
-            read(pipe3[READ], &nRecibido2, sizeof(nRecibido2));
+            read(pipe4[READ], &nRecibido2, sizeof(nRecibido2));
             close(pipe3[READ]);
             printf("Suma numeros pares: %d\n", nRecibido1);
-            printf("Suma numeros impares:  %d\n", nRecibido2);
+            printf("Suma numeros impares: %d\n", nRecibido2);
             
         }
         // Esperar a que los procesos hijos terminen
