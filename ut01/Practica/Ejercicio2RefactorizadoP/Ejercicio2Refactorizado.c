@@ -11,6 +11,7 @@ Los hijos escribirán por pantalla "Soy el hijo 1|2, he recibido ". Por cada nú
 #define BUFFER 1024
 #define READ 0
 #define WRITE 1
+#define VALOR_MAXIMO 100
 
 int esPar(int numero)
 {
@@ -116,7 +117,7 @@ int main()
         {
             for (int i = 1; i <= NTOTALES; i++)
             {
-                numero = rand() % 100;
+                numero = rand() % VALOR_MAXIMO;
                 if (esPar(numero))
                 {
                     close(pipe1[READ]); // El padre no leerá del pipe, así que cerramos el descriptor de lectura
@@ -136,6 +137,7 @@ int main()
             close(pipe1[WRITE]); // Cerrar el descriptor de escritura después de escribir
             close(pipe2[WRITE]); // Cerrar el descriptor de escritura después de escribir
 
+            // Esperar a que los procesos hijos terminen
             waitpid(hijo1, NULL, 0);
             waitpid(hijo2, NULL, 0);
 
@@ -146,9 +148,7 @@ int main()
             close(pipe3[READ]);
             printf("Suma numeros pares: %d\n", nRecibido1);
             printf("Suma numeros impares: %d\n", nRecibido2);
-            
         }
-        // Esperar a que los procesos hijos terminen
     }
 
     return 0;
