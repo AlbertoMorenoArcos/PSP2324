@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Carrera",
+            "request": "launch",
+            "mainClass": "ut02.Threads.CarreraEjercicio4.Carrera",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "Principal",
             "request": "launch",
             "mainClass": "Synchronized_Ejercicio4.Principal",
