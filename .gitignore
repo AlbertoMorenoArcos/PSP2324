@@ -8,3 +8,28 @@
 
 # Dependencias de Maven
 /.m2/
+# Archivos objeto y ejecutables
+*.o
+*.out
+
+# Archivos generados por el compilador
+*.exe
+*.so
+*.dll
+
+# Archivos de dependencias
+*.d
+
+# Carpeta de salida del compilador
+out/
+
+# Carpetas generadas por IDEs
+.vscode/
+.idea/
+
+# Archivos de respaldo
+*~
+
+# Archivos de configuración específicos del sistema
+.DS_Store
+Thumbs.db
