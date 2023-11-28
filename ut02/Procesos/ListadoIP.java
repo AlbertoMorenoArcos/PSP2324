@@ -10,7 +10,8 @@ public class ListadoIP {
 
         if (sistemaOperativo.contains("win")) {
             listarIPsWindows();
-        } else if (sistemaOperativo.contains("nix") || sistemaOperativo.contains("nux") || sistemaOperativo.contains("mac")) {
+        } else if (sistemaOperativo.contains("nix") || sistemaOperativo.contains("nux")
+                || sistemaOperativo.contains("mac")) {
             listarIPsLinux();
         } else {
             System.out.println("Sistema operativo no soportado.");
@@ -28,8 +29,8 @@ public class ListadoIP {
     public static void ejecutarComando(String commands) throws InterruptedException {
         try {
             ProcessBuilder pb = new ProcessBuilder(commands);
-                Process process = pb.start();
-                process.waitFor();
+            Process process = pb.start();
+            process.waitFor();
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
             String s;

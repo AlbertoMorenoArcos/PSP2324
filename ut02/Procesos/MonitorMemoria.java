@@ -13,13 +13,13 @@ public class MonitorMemoria {
                 // Ejecuta el comando free -h y obtiene el proceso
                 ProcessBuilder processBuilder = new ProcessBuilder("free", "-h");
                 Process process = processBuilder.start();
-                Thread.sleep(5000);
                 // Lee la salida del proceso
                 BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String s = null;
                 while ((s = stdInput.readLine()) != null) {
                     System.out.println(s);
                 }
+                Thread.sleep(5000);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListadoIP",
+            "request": "launch",
+            "mainClass": "ut02.Procesos.ListadoIP",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "MonitorMemoria",
+            "request": "launch",
+            "mainClass": "ut02.Procesos.MonitorMemoria",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "GenerarDatos",
             "request": "launch",
             "mainClass": "ut01.Practica.Ejercicio3.GenerarDatos",
