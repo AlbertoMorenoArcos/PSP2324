@@ -1,0 +1,10 @@
+# Archivos temporales
+*.class
+*.log
+
+# Carpetas generadas por el IDE
+.idea/
+/target/
+
+# Dependencias de Maven
+/.m2/
