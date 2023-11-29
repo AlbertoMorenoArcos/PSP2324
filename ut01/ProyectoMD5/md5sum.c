@@ -4,7 +4,8 @@
 
 #define MD5_LEN 16
 
-void generateMD5(const char *string, unsigned char *str_result) {
+void generateMD5(const char *string, unsigned char *str_result)
+{
     EVP_MD_CTX *ctx;
     const EVP_MD *md;
     unsigned char result[EVP_MAX_MD_SIZE];
@@ -18,12 +19,14 @@ void generateMD5(const char *string, unsigned char *str_result) {
 
     EVP_MD_CTX_free(ctx);
 
-    for(int i = 0; i < MD5_LEN; i++){   // MD5 result is always 16 bytes
-        sprintf(str_result+(i*2),"%02x", result[i]);
+    for (int i = 0; i < MD5_LEN; i++)
+    { // MD5 result is always 16 bytes
+        sprintf(str_result + (i * 2), "%02x", result[i]);
     }
 }
 
-int main(int arc, char *argv[]) {
+int main(int arc, char *argv[])
+{
     char *string = argv[1];
 
     unsigned char result[EVP_MAX_MD_SIZE];
@@ -32,8 +35,12 @@ int main(int arc, char *argv[]) {
     generateMD5(string, result);
 
     printf("MD5(%s) = %s", string, result);
-   
+
     printf("\n");
 
     return 0;
 }
+
+/*
+Enlazar con librerias al compilar
+gcc md5sum.c -o md5sum -lssl -lcrypto*/
