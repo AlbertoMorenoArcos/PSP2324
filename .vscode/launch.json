@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LiftOff",
+            "request": "launch",
+            "mainClass": "LiftOff.LiftOff",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "ListadoIP",
             "request": "launch",
             "mainClass": "ut02.Procesos.ListadoIP",

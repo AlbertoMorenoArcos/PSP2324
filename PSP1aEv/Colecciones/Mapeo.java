@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package PSP1aEv;
+package PSP1aEv.Colecciones;
+
 import java.util.*;
 
 public class Mapeo {
@@ -14,22 +15,22 @@ public class Mapeo {
         diccionario.put("Adios", "despedida");
         diccionario.put("Hola", "Saludo informal.");
         System.out.println(diccionario.get("Hola"));
-        
+
         System.out.println("Recorro el diccionario:");
-        for(String clave : diccionario.keySet()){
-            System.out.println(clave + ": " +diccionario.get(clave));
+        for (String clave : diccionario.keySet()) {
+            System.out.println(clave + ": " + diccionario.get(clave));
         }
-        
+
         Map<String, Integer> censo = new HashMap<>();
         censo.put("Toledo", 83500);
         censo.put("Illescas", 32000);
         censo.put("Getafe", 234000);
-        for(String municipio : censo.keySet()){
-            System.out.println(municipio +": "+censo.get(municipio));
+        for (String municipio : censo.keySet()) {
+            System.out.println(municipio + ": " + censo.get(municipio));
         }
         MapeoDeCodigo mapeo = new MapeoDeCodigo();
         System.out.println(mapeo.traduce("A"));
         System.out.println(mapeo.traduce("B"));
     }
-    
+
 }
