@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Control",
+            "request": "launch",
+            "mainClass": "ut01.MorenoArcosAlberto.Ejercicio4.Control",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Pruebas",
+            "request": "launch",
+            "mainClass": "ut01.Practica.Pruebas",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "LiftOff",
             "request": "launch",
             "mainClass": "LiftOff.LiftOff",
