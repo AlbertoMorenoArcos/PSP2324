@@ -13,7 +13,8 @@ public class ClienteUDP {
         try {
             DatagramSocket ds = new DatagramSocket();
             byte buffer[] = "Hola mundo\n".getBytes();
-            String ip = "127.0.0.1";
+            // String ip = "192.168.20.200";
+            String ip = "192.168.20.213";
             // ds.setBroadcast(true);
             DatagramPacket p = new DatagramPacket(
                     buffer,
