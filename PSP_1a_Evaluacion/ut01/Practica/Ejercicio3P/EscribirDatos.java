@@ -1,4 +1,4 @@
-package ut01.Practica.Ejercicio3P;
+package PSP_1a_Evaluacion.ut01.Practica.Ejercicio3P;
 
 import java.io.FileWriter;
 import java.io.IOException;

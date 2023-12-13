@@ -1,4 +1,4 @@
-package Carrera;
+package PSP_1a_Evaluacion.ut02.Threads.Carrera;
 
 import java.util.Scanner;
 
@@ -23,7 +23,6 @@ public class Principal {
             Arraythreads[i] = new Thread(Arraycorredores[i]);
         }
 
-
         System.out.println("La carrera va a comenzar");
         for (int i = 0; i < Arraythreads.length; i++) {
             Arraythreads[i].start();
@@ -31,11 +30,11 @@ public class Principal {
         System.out.println("Pulsa para empezar la carrera.");
         sc.nextLine();
         sc.close();
-        for(int i = 10; i>=CUENTA_ATRAS; i--){
+        for (int i = 10; i >= CUENTA_ATRAS; i--) {
             System.out.println(i + "!!!!");
         }
         System.out.println("SALIDA!!!!!!!");
-        
+
         synchronized (salida) {
             try {
                 salida.notifyAll();

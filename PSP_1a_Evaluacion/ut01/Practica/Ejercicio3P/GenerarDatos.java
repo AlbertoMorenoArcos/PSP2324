@@ -2,7 +2,7 @@
  Este número indicará el número de hijos. 
  Cada hijo generará un fichero con la posibles combinación de caracteres de esa longitud. El hijo 1 una letra, 
 el hijo 2 dos letras 'aa' a la 'zz', etc. Los nombres serán datos1.txt, datos2.txt, etc.*/
-package ut01.Practica.Ejercicio3P;
+package PSP_1a_Evaluacion.ut01.Practica.Ejercicio3P;
 
 //import java.io.File;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class GenerarDatos {
                 ProcessBuilder pb = new ProcessBuilder(commands);
                 pb.inheritIO();
                 try {
-                    /*Process proceso = */pb.start();
+                    /* Process proceso = */pb.start();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -1,4 +1,4 @@
-package Carrera;
+package PSP_1a_Evaluacion.ut02.Threads.Carrera;
 
 public class Corredor implements Runnable {
     private static final long TIEMPO_DESCANSO = 500;

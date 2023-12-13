@@ -1,4 +1,4 @@
-package PSP1aEv.EjemploSingleton;
+package PSP_1a_Evaluacion.PSP1aEvTeoria.EjemploSingleton;
 
 public class SoyUnico {
 

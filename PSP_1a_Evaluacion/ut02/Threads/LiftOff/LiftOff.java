@@ -1,4 +1,4 @@
-package LiftOff;
+package PSP_1a_Evaluacion.ut02.Threads.LiftOff;
 
 public class LiftOff implements Runnable {
     private int countDown = 10;

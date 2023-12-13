@@ -8,7 +8,7 @@ Cada vez que escriba una estrofa, el thread generará un número aleatorio entre
 
 Crea un programa principal que gestion 3 canciones infantiles de forma concurrente con distintas prioridades (setPriority) */
 
-package Ejercicio3;
+package PSP_1a_Evaluacion.ut02.Threads.Ejercicio3;
 
 import java.util.Random;
 
@@ -18,11 +18,11 @@ public class Ejercicio3 {
         animales perro = new animales("perro", "ladraba", 8);
         animales gato = new animales("gato", "maullaba", 4);
         animales raton = new animales("raton", "mordisqueaba", 5);
-        
+
         Thread threadPerro = new Thread(perro);
         Thread threadGato = new Thread(gato);
         Thread threadRaton = new Thread(raton);
-        
+
         threadPerro.setPriority(Thread.NORM_PRIORITY);
         threadGato.setPriority(Thread.MAX_PRIORITY);
         threadRaton.setPriority(Thread.MIN_PRIORITY);
@@ -72,13 +72,14 @@ class animales extends Thread {
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
     }
-    public boolean esPrimo (int numero) {
+
+    public boolean esPrimo(int numero) {
         for (int i = 2; i <= Math.sqrt(numero); i++) {
             if (numero % i == 0) {
-                return false; 
+                return false;
             }
         }
-    
+
         return true;
     }
 

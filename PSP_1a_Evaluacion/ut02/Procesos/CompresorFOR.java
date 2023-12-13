@@ -1,4 +1,4 @@
-package ut02.Procesos;
+package PSP_1a_Evaluacion.ut02.Procesos;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,16 +13,16 @@ public class CompresorFOR {
                 .format(DateTimeFormatter.ofPattern("MM.dd.yyy"))
                 .replaceAll("\\.", "_");
 
-        for (int i = 0; i<args.length;i++) {
+        for (int i = 0; i < args.length; i++) {
             String arg = args[i];
             String ruta = arg.replaceFirst("\\/", "").replaceAll("\\/", "_");
             String n_archivo = ruta + "_" + fecha + ".tar.gz";
 
             String[] commands = {
-                "tar",
-                "cvzf",
-                n_archivo,
-                arg
+                    "tar",
+                    "cvzf",
+                    n_archivo,
+                    arg
             };
 
             ProcessBuilder pb = new ProcessBuilder(commands);

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package PSP1aEv.Colecciones;
+package PSP_1a_Evaluacion.PSP1aEvTeoria.Colecciones;
 
 import java.util.*;
 

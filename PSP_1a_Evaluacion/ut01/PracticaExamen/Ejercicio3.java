@@ -3,7 +3,7 @@
  El programa Java ejecutará un “ps aux” (comando linux), leerá la información del comando, 
  mostrará la cabecera y todos los procesos de ese usuario que consumen más del 0.0 de memoria.
  */
-package ut01.PracticaExamen;
+package PSP_1a_Evaluacion.ut01.PracticaExamen;
 
 import java.io.BufferedReader;
 import java.io.IOException;

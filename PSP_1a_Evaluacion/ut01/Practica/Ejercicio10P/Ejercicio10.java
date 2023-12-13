@@ -1,6 +1,6 @@
 /*Crea un programa Java que describa las ips que tiene en ordenador en linux */
 
-package ut01.Practica.Ejercicio10P;
+package PSP_1a_Evaluacion.ut01.Practica.Ejercicio10P;
 
 import java.io.BufferedReader;
 import java.io.IOException;

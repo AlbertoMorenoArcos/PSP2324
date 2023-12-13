@@ -5,6 +5,7 @@
     },
     "java.project.sourcePaths": [
         "NavarroOliveraFacundo2/NavarroOliveraFacundo",
-        "MorenoArcosAlberto/Ejercicio4"
+        "MorenoArcosAlberto/Ejercicio4",
+        "."
     ]
 }

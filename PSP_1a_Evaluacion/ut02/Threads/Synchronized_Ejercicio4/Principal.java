@@ -1,4 +1,4 @@
-package Synchronized_Ejercicio4;
+package PSP_1a_Evaluacion.ut02.Threads.Synchronized_Ejercicio4;
 
 public class Principal {
     public static final int NVECES = 1000000;

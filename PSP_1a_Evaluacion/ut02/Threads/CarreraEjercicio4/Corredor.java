@@ -1,4 +1,4 @@
-package CarreraEjercicio4;
+package PSP_1a_Evaluacion.ut02.Threads.CarreraEjercicio4;
 
 public class Corredor implements Runnable {
     int dorsal;

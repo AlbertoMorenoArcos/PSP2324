@@ -1,4 +1,4 @@
-package ejercicio3;
+package PSP_1a_Evaluacion.Examen1aEv.NavarroOliveraFacundo2.NavarroOliveraFacundo.ejercicio3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

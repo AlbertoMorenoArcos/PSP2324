@@ -1,4 +1,4 @@
-package ejercicio4;
+package PSP_1a_Evaluacion.Examen1aEv.NavarroOliveraFacundo2.NavarroOliveraFacundo.ejercicio4;
 
 import java.util.Random;
 

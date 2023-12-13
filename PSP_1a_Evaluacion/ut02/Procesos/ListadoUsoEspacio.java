@@ -1,4 +1,4 @@
-package ut02.Procesos;
+package PSP_1a_Evaluacion.ut02.Procesos;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ public class ListadoUsoEspacio {
         }
 
         for (int i = 0; i < args.length; i++) {
-            String[] commands = {"du", "-h", args[i]};
+            String[] commands = { "du", "-h", args[i] };
             try {
                 System.out.println("Uso de espacio para el directorio: " + args[i]);
 
@@ -33,7 +33,8 @@ public class ListadoUsoEspacio {
 }
 
 /*
-Para mostrar la salida ordenada en un fichero
-alberto@alberto-VirtualBox:~/PSP2324$ java ut02.Procesos.ListadoUsoEspacio /home/alberto /home > salida.txt
-alberto@alberto-VirtualBox:~/PSP2324$ sort salida.txt
- */ 
+ * Para mostrar la salida ordenada en un fichero
+ * alberto@alberto-VirtualBox:~/PSP2324$ java ut02.Procesos.ListadoUsoEspacio
+ * /home/alberto /home > salida.txt
+ * alberto@alberto-VirtualBox:~/PSP2324$ sort salida.txt
+ */

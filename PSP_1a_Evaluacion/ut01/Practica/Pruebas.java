@@ -1,4 +1,4 @@
-package ut01.Practica;
+package PSP_1a_Evaluacion.ut01.Practica;
 
 import java.util.Random;
 

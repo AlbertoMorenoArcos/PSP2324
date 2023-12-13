@@ -1,4 +1,4 @@
-package interrupt;
+package PSP_1a_Evaluacion.ut02.Threads.interrupt;
 
 import java.util.Scanner;
 

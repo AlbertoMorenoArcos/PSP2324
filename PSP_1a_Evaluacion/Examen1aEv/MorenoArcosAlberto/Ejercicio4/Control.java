@@ -1,4 +1,4 @@
-package MorenoArcosAlberto.Ejercicio4;
+package PSP_1a_Evaluacion.Examen1aEv.MorenoArcosAlberto.Ejercicio4;
 
 import java.util.Scanner;
 

@@ -1,19 +1,19 @@
-package Synchronized_Ejercicio4;
+package PSP_1a_Evaluacion.ut02.Threads.Synchronized_Ejercicio4;
 
-public class Decrementador implements Runnable{
+public class Decrementador implements Runnable {
 
     Contador cont;
 
-    public Decrementador (Contador c){
+    public Decrementador(Contador c) {
         this.cont = c;
     }
 
     @Override
     public void run() {
-        for(int i = 0; i< Principal.NVECES; i++){
+        for (int i = 0; i < Principal.NVECES; i++) {
             cont.decrementa();
         }
-   
+
     }
-    
+
 }

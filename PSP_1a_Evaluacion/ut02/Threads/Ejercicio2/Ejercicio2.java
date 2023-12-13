@@ -12,17 +12,14 @@ alberto@alberto-VirtualBox:~/PSP2324/ut02/Threads$ java Ejercicio2.Ejercicio2 3 
 alberto@alberto-VirtualBox:~/PSP2324/ut02/Threads$ sort salida.txt
 */
 
-package Ejercicio2;
-
+package PSP_1a_Evaluacion.ut02.Threads.Ejercicio2;
 
 public class Ejercicio2 {
     //
 
     public static void main(String[] args) {
 
-        
         int nThreads = Integer.parseInt(args[0]);
-
 
         // Crea el array de N threads
         Thread arrayThreads[] = new Thread[nThreads];

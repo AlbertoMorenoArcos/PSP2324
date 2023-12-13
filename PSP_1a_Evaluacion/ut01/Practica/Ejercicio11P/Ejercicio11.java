@@ -1,5 +1,5 @@
 /*Crea un programa Java que describa las ips que tiene en ordenador en Windows. */
-package ut01.Practica.Ejercicio11P;
+package PSP_1a_Evaluacion.ut01.Practica.Ejercicio11P;
 
 import java.io.BufferedReader;
 import java.io.IOException;
