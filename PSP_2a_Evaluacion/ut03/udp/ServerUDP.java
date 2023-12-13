@@ -10,8 +10,9 @@ public class ServerUDP {
 	private static final int MAX_LENGTH = 65535;
 
 	public static void main(String args[]) {
+		int puertoServidor = Integer.parseInt(args[0]);
 		try {
-			DatagramSocket ds = new DatagramSocket(8888, InetAddress.getByName("0.0.0.0"));
+			DatagramSocket ds = new DatagramSocket(puertoServidor, InetAddress.getByName("127.0.0.1"));
 			byte[] buffer = new byte[MAX_LENGTH];
 
 			DatagramPacket p = new DatagramPacket(

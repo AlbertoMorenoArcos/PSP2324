@@ -10,16 +10,18 @@ import java.net.UnknownHostException;
 public class ClienteUDP {
 
     public static void main(String[] args) {
+        String msg = args[0];
+        int puertoCliente = Integer.parseInt(args[1]);
         try {
             DatagramSocket ds = new DatagramSocket();
-            byte buffer[] = "Hola mundo\n".getBytes();
+            byte buffer[] = msg.getBytes();
             String ip = "127.0.0.1";
             // ds.setBroadcast(true);
             DatagramPacket p = new DatagramPacket(
                     buffer,
                     buffer.length,
                     InetAddress.getByName(ip),
-                    4321);
+                    puertoCliente);
 
             ds.send(p);
             ds.close();
