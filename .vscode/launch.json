@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ClienteUDP",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.udp.ClienteUDP",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ServerUDP",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.udp.ServerUDP",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "Control",
             "request": "launch",
             "mainClass": "ut01.MorenoArcosAlberto.Ejercicio4.Control",
