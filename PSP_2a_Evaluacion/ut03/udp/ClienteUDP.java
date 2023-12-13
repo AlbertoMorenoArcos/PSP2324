@@ -14,14 +14,8 @@ public class ClienteUDP {
         int puertoCliente = Integer.parseInt(args[1]);
         try {
             DatagramSocket ds = new DatagramSocket();
-<<<<<<< HEAD
-            byte buffer[] = "Hola mundo\n".getBytes();
-            // String ip = "192.168.20.200";
-            String ip = "192.168.20.213";
-=======
             byte buffer[] = msg.getBytes();
             String ip = "127.0.0.1";
->>>>>>> e8f6553d57dfc2d7e8bf4d18894bf50945e42c04
             // ds.setBroadcast(true);
             DatagramPacket p = new DatagramPacket(
                     buffer,
