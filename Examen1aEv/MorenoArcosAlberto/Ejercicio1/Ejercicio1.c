@@ -135,7 +135,7 @@ int main(int argc, char *argv[])
             longitudFin = potenciaFin - 1;
 
             int numeroRandom;
-            for (int i = 0; i <= cantidadEnviar; i++)
+            for (int i = 0; i < cantidadEnviar; i++)
             {
                 numeroRandom = rand() % longitudFin;
                 if (esPrimo(numeroRandom))

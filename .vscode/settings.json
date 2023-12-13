@@ -2,5 +2,9 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "stdio.h": "c"
-    }
+    },
+    "java.project.sourcePaths": [
+        "NavarroOliveraFacundo2/NavarroOliveraFacundo",
+        "MorenoArcosAlberto/Ejercicio4"
+    ]
 }

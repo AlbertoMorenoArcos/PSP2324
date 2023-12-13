@@ -1,4 +1,4 @@
-package ut01.MorenoArcosAlberto.Ejercicio4;
+package MorenoArcosAlberto.Ejercicio4;
 
 import java.util.Random;
 
