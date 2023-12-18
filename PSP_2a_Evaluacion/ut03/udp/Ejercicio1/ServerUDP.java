@@ -1,36 +1,33 @@
 package PSP_2a_Evaluacion.ut03.udp.Ejercicio1;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.SocketException;
 
 public class ServerUDP {
-    private static final int MAX_LENGTH = 65535;
+	private static final int MAX_LENGTH = 65535;
 
-    public static void main(String[] args) {
-        try {
-            int puerto = Integer.parseInt(args[0]);
-            DatagramSocket socket = new DatagramSocket(puerto); // Abre el socket en el puerto 9876
-            byte[] receivedData = new byte[MAX_LENGTH];
-            byte[] sendData = new byte[MAX_LENGTH];
-            InetAddress address;
+	public static void main(String args[]) {
+		String ip = args[0];
+		int puertoServidor = Integer.parseInt(args[1]);
+		try {
+			DatagramSocket ds = new DatagramSocket(puertoServidor, InetAddress.getByName(ip));
+			byte[] buffer = new byte[MAX_LENGTH];
 
-            while (true) {
-                DatagramPacket receivedPacket = new DatagramPacket(receivedData, receivedData.length);
-                socket.receive(receivedPacket); // Espera y recibe el paquete
-                puerto = receivedPacket.getPort();
-                address = receivedPacket.getAddress();
-                // Extrae la información del paquete
-                String message = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
-                System.out.println("Mensaje recibido de la ip: " + address + " el mensaje: " + message);
-                String message1 = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
-                sendData = message1.getBytes();
+			DatagramPacket p = new DatagramPacket(
+					buffer,
+					MAX_LENGTH);
 
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, address, puerto);
-                socket.send(sendPacket);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+			ds.receive(p);
+			ds.close();
+			System.out.println(new String(p.getData(), 0, p.getLength()));
+
+		} catch (SocketException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
