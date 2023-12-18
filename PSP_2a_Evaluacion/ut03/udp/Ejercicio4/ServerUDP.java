@@ -21,17 +21,18 @@ public class ServerUDP {
                 socket.receive(receivedPacket); // Espera y recibe el paquete
                 puerto = receivedPacket.getPort();
                 address = receivedPacket.getAddress();
-                Scanner sc = new Scanner(System.in);
-                String messageSend = sc.nextLine();
-                sc.close();
+
                 // Extrae la información del paquete
                 String message = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
                 System.out.println("Mensaje recibido de la ip: " + address + " el mensaje: " + message);
-                String message1 = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
-                sendData = message1.getBytes();
+                Scanner sc = new Scanner(System.in);
+                String messageSent = sc.next();
+
+                sendData = messageSent.getBytes();
 
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, address, puerto);
                 socket.send(sendPacket);
+                // sc.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
