@@ -1,4 +1,4 @@
-package PSP_2a_Evaluacion.ut03.udp;
+package PSP_2a_Evaluacion.ut03.udp.PrimeraPrueba;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -10,12 +10,13 @@ import java.net.UnknownHostException;
 public class ClienteUDP {
 
     public static void main(String[] args) {
-        String msg = args[0];
+        String ip = args[0];
         int puertoCliente = Integer.parseInt(args[1]);
+        String msg = args[2];
+
         try {
             DatagramSocket ds = new DatagramSocket();
             byte buffer[] = msg.getBytes();
-            String ip = "127.0.0.1";
             // ds.setBroadcast(true);
             DatagramPacket p = new DatagramPacket(
                     buffer,
