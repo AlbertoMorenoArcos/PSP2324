@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PrincipalSimulador",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.udp.Ejercicio8.PrincipalSimulador",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "ClienteUDP",
             "request": "launch",
             "mainClass": "PSP_2a_Evaluacion.ut03.udp.ClienteUDP",
