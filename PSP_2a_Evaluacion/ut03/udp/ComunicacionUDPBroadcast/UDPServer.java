@@ -1,4 +1,4 @@
-package PSP_2a_Evaluacion.ut03.udp.ComunicacionTCP;
+package PSP_2a_Evaluacion.ut03.udp.ComunicacionUDPBroadcast;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
