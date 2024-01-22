@@ -21,20 +21,35 @@ public class AscensorPaco implements IAscensor, Runnable {
     }
 
     public synchronized void subir() {
-        int indexPlantaActual = obtenerIndicePlanta(planta_ascensor);
-        if (indexPlantaActual < plantas.length - 1) {
-            planta_ascensor = plantas[indexPlantaActual + 1];
-            direccion = "U";
-        }
+        Thread t = new Thread(() -> {
+            try {
+                int indexPlantaActual = obtenerIndicePlanta(planta_ascensor);
+                if (indexPlantaActual < plantas.length - 1) {
+                    planta_ascensor = plantas[indexPlantaActual + 1];
+                    direccion = "U";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        t.start();
 
     }
 
     public synchronized void bajar() {
-        int indexPlantaActual = obtenerIndicePlanta(planta_ascensor);
-        if (indexPlantaActual > 0) {
-            planta_ascensor = plantas[indexPlantaActual - 1];
-            direccion = "D";
-        }
+
+        Thread t = new Thread(() -> {
+            try {
+                int indexPlantaActual = obtenerIndicePlanta(planta_ascensor);
+                if (indexPlantaActual > 0) {
+                    planta_ascensor = plantas[indexPlantaActual - 1];
+                    direccion = "D";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        t.start();
 
     }
 

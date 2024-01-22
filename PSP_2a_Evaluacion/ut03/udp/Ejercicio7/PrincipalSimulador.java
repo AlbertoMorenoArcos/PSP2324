@@ -11,26 +11,8 @@ public class PrincipalSimulador {
         IAscensor ascensor = new AscensorPaco();
         ascensor.config(id, ip, puerto);
         SimuladorUI simulador = new SimuladorUI();
-        Thread threadSimulador = new Thread(new SimuladorUI());
-        threadSimulador.start();
         ascensor.run();
-        try {
-            threadSimulador.join();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        while (true) {
-            int seleccion = simulador.obtenerSeleccion();
-
-            if (seleccion == 1) {
-                ascensor.subir();
-            } else if (seleccion == 2) {
-                ascensor.bajar();
-            } else {
-                System.out.println("Opcion no permitida.");
-            }
-        }
+        simulador.run();
 
     }
 }
