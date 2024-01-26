@@ -1,11 +1,10 @@
-package PSP_2a_Evaluacion.ut03.udp.Ejercicio5;
+package PSP_2a_Evaluacion.ut03.udp.EjercicioUnicastPrimos;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class UDPClient {
 
@@ -37,6 +36,10 @@ class ReceiveClientHandler implements Runnable {
 
     public ReceiveClientHandler(DatagramSocket socket) {
         this.socket = socket;
+    }
+
+    public synchronized void enviar() {
+
     }
 
     @Override
