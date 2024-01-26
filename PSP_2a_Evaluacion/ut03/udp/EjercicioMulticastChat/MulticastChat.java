@@ -46,7 +46,7 @@ public class MulticastChat {
                 byte[] buf = new byte[1000];
                 DatagramPacket recv = new DatagramPacket(buf, buf.length);
                 s.receive(recv);
-                System.out.println(new String(recv.getData(), 0, recv.getLength()));
+                System.out.println("Mensaje recibido: " + new String(recv.getData(), 0, recv.getLength()));
             }
 
             // Lo dejo cuando quiera
