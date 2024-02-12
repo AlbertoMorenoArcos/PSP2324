@@ -2,6 +2,97 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.tcpMultithread.Cliente",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ServerMultithread",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.tcpMultithread.ServerMultithread",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ClienteManda",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio3.ClienteManda",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio3.Server",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "prueba",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio3.prueba",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ClienteManda",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio2.ClienteManda",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio2.Server",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ClienteManda",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio1.ClienteManda",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Ejercicio1.Server",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "ClienteManda",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Prueba.ClienteManda",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.Prueba.Server",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "DemoObserver",
+            "request": "launch",
+            "mainClass": "Observer.Futbol.DemoObserver",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Tester",
+            "request": "launch",
+            "mainClass": "Observer.Tester",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "MulticastChat",
             "request": "launch",
             "mainClass": "PSP_2a_Evaluacion.ut03.udp.EjercicioMulticastChat.MulticastChat",

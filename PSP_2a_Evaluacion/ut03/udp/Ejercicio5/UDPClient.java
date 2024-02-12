@@ -5,15 +5,14 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class UDPClient {
 
     public static void main(String[] args) throws UnknownHostException, SocketException {
 
         DatagramSocket socket = new DatagramSocket();
-        InetAddress serverAddress = InetAddress.getByName(args[0]);
-        int serverPort = Integer.parseInt(args[1]);
+        InetAddress serverAddress = InetAddress.getByName(args[0]); // IP del servidor al que se le envia
+        int serverPort = Integer.parseInt(args[1]); // Puerto de destino(donde escucha el server)
 
         // Iniciar un nuevo hilo para enviar mensajes al servidor
         Thread responseThread = new Thread(new ResponseHandler(socket, serverAddress, serverPort));

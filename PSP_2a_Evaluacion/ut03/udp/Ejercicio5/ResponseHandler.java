@@ -26,7 +26,9 @@ class ResponseHandler implements Runnable {
                 byte[] sendData = messageSent.getBytes();
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, serverPort);
                 socket.send(sendPacket);
+
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

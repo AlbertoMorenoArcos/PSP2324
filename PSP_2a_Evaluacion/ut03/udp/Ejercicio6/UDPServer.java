@@ -37,15 +37,18 @@ class ReceiveServerHandler implements Runnable {
                 DatagramPacket receivedPacket = new DatagramPacket(new byte[MAX_LENGTH], MAX_LENGTH);
                 socket.receive(receivedPacket);
 
+                MensajesRecibidos msgRecibidos = new MensajesRecibidos();
+
                 InetAddress clientAddress = receivedPacket.getAddress();
                 int clientPort = receivedPacket.getPort();
 
                 String message = new String(receivedPacket.getData(), 0, receivedPacket.getLength());
-                System.out.println("Mensaje recibido de la IP: " + clientAddress + ", puerto: " + clientPort
-                        + ", mensaje: " + message);
+                msgRecibidos.msgRecibido(message);
+
                 // Iniciar un nuevo hilo para manejar la respuesta al cliente
                 Thread responseThread = new Thread(new ResponseHandler(socket, clientAddress, clientPort));
                 responseThread.start();
+
             }
         } catch (Exception e) {
             e.printStackTrace();
