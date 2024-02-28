@@ -7,5 +7,9 @@
         "NavarroOliveraFacundo2/NavarroOliveraFacundo",
         "MorenoArcosAlberto/Ejercicio4",
         "."
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/alberto/Documents/cli-module-8.6.3-javadoc.jar"
     ]
 }

@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Prueba",
+            "request": "launch",
+            "mainClass": "com.example.Prueba",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Spamer",
+            "request": "launch",
+            "mainClass": "com.example.Spamer",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut04.Ejercicio1.Ejercicio1",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "Cliente",
             "request": "launch",
             "mainClass": "PSP_2a_Evaluacion.ut03.tcp.tcpMultithread.Cliente",
