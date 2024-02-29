@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut04.Ejercicio2.Ejercicio2",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut04.Ejercicio1.Ejercicio1",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Prueba",
             "request": "launch",
             "mainClass": "com.example.Prueba",
