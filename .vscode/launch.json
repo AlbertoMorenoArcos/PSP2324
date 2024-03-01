@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Spamer",
+            "request": "launch",
+            "mainClass": "com.example.Spamer",
+            "projectName": "mailer"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio2",
             "request": "launch",
             "mainClass": "PSP_2a_Evaluacion.ut04.Ejercicio2.Ejercicio2",

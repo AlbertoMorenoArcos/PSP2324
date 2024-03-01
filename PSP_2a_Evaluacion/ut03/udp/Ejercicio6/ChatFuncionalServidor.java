@@ -1,4 +1,4 @@
-package UDP.Tarea6;
+package PSP_2a_Evaluacion.ut03.udp.Ejercicio6;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

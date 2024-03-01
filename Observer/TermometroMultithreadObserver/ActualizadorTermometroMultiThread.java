@@ -1,11 +1,11 @@
-package TermometroMultiThread;
+package Observer.TermometroMultithreadObserver;
 
-import TermometroMultiThread.ManejadorObserverTermometroThread.ObservadorThread;
+import Observer.TermometroMultithreadObserver.ManejadorObserverTermometroThread.ObservadorThread;
 
 public class ActualizadorTermometroMultiThread implements ObservadorThread {
 
     @Override
     public void actualizar(int temperatura) {
-        System.out.println("El termometro marca "+temperatura+ "ºC");
+        System.out.println("El termometro marca " + temperatura + "ºC");
     }
 }

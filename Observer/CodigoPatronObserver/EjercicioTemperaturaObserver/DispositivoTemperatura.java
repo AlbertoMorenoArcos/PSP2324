@@ -1,4 +1,4 @@
-package EjercicioTemperaturaObserver;
+package Observer.CodigoPatronObserver.EjercicioTemperaturaObserver;
 
 public class DispositivoTemperatura {
     public static void main(String[] args) {

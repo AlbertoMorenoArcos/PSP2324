@@ -1,12 +1,13 @@
-package TermometroMultiThread;
+package Observer.TermometroMultithreadObserver;
 
 public class MainTermometroMultiThread {
-    private static final int THREADDORMIDO=1000; 
+    private static final int THREADDORMIDO = 1000;
+
     public static void main(String[] args) {
-        ManejadorObserverTermometroThread termotetroMultiHilo=new ManejadorObserverTermometroThread();
-        ActualizadorTermometroMultiThread observador=new ActualizadorTermometroMultiThread();
+        ManejadorObserverTermometroThread termotetroMultiHilo = new ManejadorObserverTermometroThread();
+        ActualizadorTermometroMultiThread observador = new ActualizadorTermometroMultiThread();
         termotetroMultiHilo.agregarObservador(observador);
-        Thread hiloTermometro=new Thread(termotetroMultiHilo);
+        Thread hiloTermometro = new Thread(termotetroMultiHilo);
         hiloTermometro.start();
         while (true) {
             try {

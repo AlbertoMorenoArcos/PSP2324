@@ -1,3 +1,5 @@
+package PSP_2a_Evaluacion.ut03.tcp.EnviarPDF;
+
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.Socket;
@@ -11,12 +13,12 @@ public class Cliente {
             FileOutputStream fileOut = new FileOutputStream("cliente_prueba.pdf");
 
             int currByte;
-            while((currByte = in.read()) != -1) {
+            while ((currByte = in.read()) != -1) {
                 fileOut.write(currByte);
             }
             socket.close();
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
         }
     }
 }

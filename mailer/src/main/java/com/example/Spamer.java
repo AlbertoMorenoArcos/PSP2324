@@ -16,7 +16,7 @@ import org.simplejavamail.mailer.MailerBuilder;
  *
  */
 public class Spamer {
-    private static final String RUTA = "/home/alberto/PSP2324/demo/src/main/java/com/example/dir.txt";
+    private static final String RUTA = "/home/alberto/PSP2324/mailer/src/main/java/com/example/dir.txt";
 
     public static void main(String[] args) throws IOException {
         // Most essentials together (but almost everything is optional):
@@ -40,7 +40,7 @@ public class Spamer {
                     .buildEmail();
 
             Mailer mailer = MailerBuilder
-                    .withSMTPServer("smtp.educa.madrid.org", 587, "alberto.moreno37", "Almoar.95")
+                    .withSMTPServer("smtp.educa.madrid.org", 587, "alberto.moreno37", "contraseñafalsa")
                     .withTransportStrategy(TransportStrategy.SMTP_TLS)
                     .clearEmailValidator() // turns off email validation
                     .buildMailer();

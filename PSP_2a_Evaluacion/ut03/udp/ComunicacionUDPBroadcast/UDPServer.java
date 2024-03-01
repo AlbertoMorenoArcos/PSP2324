@@ -11,11 +11,9 @@ public class UDPServer {
         try {
             int puerto = Integer.parseInt(args[0]);
             DatagramSocket socket = new DatagramSocket(puerto);
-
             // Iniciar un nuevo hilo para manejar los mensajes del cliente
             Thread receiveThread = new Thread(new ReceiveServerHandler(socket));
             receiveThread.start();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
