@@ -1,4 +1,4 @@
-// package bettinghouses;
+package PSP_2a_Evaluacion.PreparacionExamen.ejercicioCasasApuestas;
 
 public class MainTcp {
 

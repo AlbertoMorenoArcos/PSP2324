@@ -1,6 +1,6 @@
 
-/* package PracticaExamen.HidratacionPiramide;
- */
+package PSP_2a_Evaluacion.PreparacionExamen.Piramide;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;

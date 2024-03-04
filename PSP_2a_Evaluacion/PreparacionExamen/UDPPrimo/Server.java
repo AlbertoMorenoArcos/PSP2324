@@ -1,6 +1,6 @@
 
-/* package PracticaExamen.UdpServerPrimo;
- */
+package PSP_2a_Evaluacion.PreparacionExamen.UDPPrimo;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 

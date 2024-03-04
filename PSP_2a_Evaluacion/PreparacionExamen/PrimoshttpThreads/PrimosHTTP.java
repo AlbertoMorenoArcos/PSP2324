@@ -1,4 +1,4 @@
-package EjerciciosExamen.LlamadaHTTPThread;
+package PSP_2a_Evaluacion.PreparacionExamen.PrimoshttpThreads;
 
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class PrimosHTTP implements Runnable {
     int contador;
 
     public interface ObservadorHTTPThread {
-        void actualizar(int numero,int contador);
+        void actualizar(int numero, int contador);
     }
 
     private List<ObservadorHTTPThread> observadores = new ArrayList<>();
@@ -24,9 +24,9 @@ public class PrimosHTTP implements Runnable {
         observadores.remove(observador);
     }
 
-    public void notificarObservadores(int numeroPrimo,int contador) {
+    public void notificarObservadores(int numeroPrimo, int contador) {
         for (ObservadorHTTPThread observador : observadores) {
-            observador.actualizar(numeroPrimo,contador);
+            observador.actualizar(numeroPrimo, contador);
         }
     }
 
@@ -39,7 +39,7 @@ public class PrimosHTTP implements Runnable {
     public void generarNumerosPrimos(int n, int m) {
         for (int i = 0; i < m; i++) {
             int numeroPrimo = generarNumeroPrimo(n);
-            notificarObservadores(numeroPrimo,contador);
+            notificarObservadores(numeroPrimo, contador);
             contador++;
             n = numeroPrimo;
         }

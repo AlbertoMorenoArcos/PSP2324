@@ -1,6 +1,6 @@
 
-/* package PracticaExamen.Reclutas;
- */
+package PSP_2a_Evaluacion.PreparacionExamen.BroadcastReclutas;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;

@@ -1,4 +1,4 @@
-package PracticaExamen.ServerStringInteger;
+package PSP_2a_Evaluacion.PreparacionExamen.UDPprimoscadenas;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

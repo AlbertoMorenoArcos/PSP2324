@@ -1,4 +1,4 @@
-package factorial_udp_observer;
+package PSP_2a_Evaluacion.PreparacionExamen.factorial;
 
 public class ClientObserver implements FactorialObserver {
 

@@ -1,4 +1,4 @@
-// package bettinghouses;
+package PSP_2a_Evaluacion.PreparacionExamen.ejercicioCasasApuestas;
 
 import java.util.ArrayList;
 import java.util.List;

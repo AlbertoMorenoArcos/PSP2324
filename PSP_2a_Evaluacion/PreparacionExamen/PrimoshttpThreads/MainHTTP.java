@@ -1,4 +1,4 @@
-package EjerciciosExamen.LlamadaHTTPThread;
+package PSP_2a_Evaluacion.PreparacionExamen.PrimoshttpThreads;
 
 import java.io.BufferedReader;
 import java.io.IOException;

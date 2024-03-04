@@ -1,4 +1,4 @@
-package EjerciciosExamen.LlamadaHTTPThread;
+package PSP_2a_Evaluacion.PreparacionExamen.PrimoshttpThreads;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -6,23 +6,22 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import EjerciciosExamen.LlamadaHTTPThread.PrimosHTTP.ObservadorHTTPThread;
+import PSP_2a_Evaluacion.PreparacionExamen.PrimoshttpThreads.PrimosHTTP.ObservadorHTTPThread;
 
-public class Logger implements ObservadorHTTPThread{
+public class Logger implements ObservadorHTTPThread {
 
     private List<Integer> datosRecibidos = new ArrayList<>();
     private Socket connCliente;
     private int maximo;
 
-
-    public Logger(Socket connCliente,int maximo) {
+    public Logger(Socket connCliente, int maximo) {
         this.connCliente = connCliente;
-        this.maximo=maximo;
+        this.maximo = maximo;
     }
 
     @Override
     public void actualizar(int numero, int contador) {
-        if (contador < maximo-1) {
+        if (contador < maximo - 1) {
             datosRecibidos.add(numero);
         } else {
             datosRecibidos.add(numero);
