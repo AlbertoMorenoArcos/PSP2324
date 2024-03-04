@@ -15,21 +15,31 @@ public class Server {
 
 	public static void main(String[] args) {
 		ServerSocket server;
+
 		try {
 			server = new ServerSocket(1234);
 			while (true) {
-				// Espera cliente
-				Socket socket = server.accept();
-
-				FileInputStream file_in = new FileInputStream("prueba.pdf");
-				byte[] fileBytes = file_in.readAllBytes();
+				Socket socket = server.accept(); // accept() dentro del while para liberar el socket
 
 				new Thread(() -> {
+
 					try {
-						OutputStream out = socket.getOutputStream();
-						out.write(fileBytes);
+						OutputStream outputStream = socket.getOutputStream();
+						FileInputStream fileInputStream = new FileInputStream(
+								"example.pdf");
+
+						int byteRead;
+						while ((byteRead = fileInputStream.read()) != -1) {
+							outputStream.write(byteRead);
+						}
+
+						fileInputStream.close();
+						outputStream.close();
 						socket.close();
-					} catch (Exception e) {
+
+						System.out.println("File sent successfully.");
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
 
 				}).start();
@@ -37,7 +47,6 @@ public class Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

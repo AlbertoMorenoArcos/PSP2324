@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.EnviarPDF.Server",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.ut03.tcp.EnviarPDF.Cliente",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "PSP_2a_Evaluacion.PreparacionExamen.ejercicioCasaApuestas.Main",
