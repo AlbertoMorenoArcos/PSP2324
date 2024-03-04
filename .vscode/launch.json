@@ -4,6 +4,27 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.PreparacionExamen.ejercicioCasaApuestas.Main",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.PreparacionExamen.ejercicio3examen.Main",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "PSP_2a_Evaluacion.PreparacionExamen.ejercicio3examen.Ejercicio2",
+            "projectName": "PSP2324_a7c705df"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "com.example.Main",
             "projectName": "ejercicio2examen"
         },

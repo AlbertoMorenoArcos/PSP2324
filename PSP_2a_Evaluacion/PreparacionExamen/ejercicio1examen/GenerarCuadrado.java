@@ -1,4 +1,4 @@
-package PSP_2a_Evaluacion.PreparacionExamen.EjercicioExamenObserver;
+package PSP_2a_Evaluacion.PreparacionExamen.ejercicio1examen;
 
 public class GenerarCuadrado {
 
